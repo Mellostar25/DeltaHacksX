@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <!-- Add the Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore-compat.js"></script>
+    <!-- Initialize Firebase with your config -->
+    <script type = "module" src="firebase-config.js"></script>
 </head>
 <body id = "body">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -69,13 +74,33 @@
 
     </div>
     <div id = 'mainAct'>
-        <form id = mainActList>
-
+        <form id1 = mainActList>
+        <!--where divs go for output-->
         </form>
     </div>
+<<<<<<< Updated upstream
     <div id = 'mainCal'>
         
     </div>
         
+=======
+
+
+    <div>
+        <form id = 'signUpForm'>
+            <input type="email" id="emailSignUp">
+            <input type="password" id="passwordSignUp">
+        </form>
+        <button type = "submit" id="signup">signup</button>
+        <br>
+        <form id = 'signInForm'>
+            <input type="email" id="emailSignIn">
+            <input type="password" id="passwordSignIn">
+        </form>
+        <button type = "submit" id="signIn">signIn</button>
+    </div>
+
+    
+>>>>>>> Stashed changes
 </body>
 </html>
