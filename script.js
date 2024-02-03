@@ -100,18 +100,22 @@ function getExercise() {
     });
 }
 
-function getDailyNutrients(weight, height, gender, age)
+function getDailyNutrients()
 {
     //this function uses the user's weight to calculate the amount of nutrients they should consume daily
-    
-        if (gender == "male")
-        {
-            let bmr = 66.47 + (30.305* weight) + (5.003 * height) - (6.75 * age);
-        }
-        else
-        {
-            let bmr = 655.1 + (21.076852 * weight) + (1.850 * height) - (4.676 * age);
-        }
+    let weight = document.getElementById('calNum').value;
+    let height = document.getElementById('heightNum').value;
+    let age = document.getElementById('ageNum').value;
+    let gender = document.getElementById('dropdownGender').value.toLowerCase();
+    let bmr = 0
+    if (gender == "male")
+    {
+        bmr = 66.47 + (30.305* weight) + (5.003 * height) - (6.75 * age);
+    }
+    else
+    {
+        bmr = 655.1 + (21.076852 * weight) + (1.850 * height) - (4.676 * age);
+    }
 
     var cal1 = bmr * 1.2;
     var cal2 = bmr * 1.375;
@@ -127,15 +131,17 @@ function getDailyNutrients(weight, height, gender, age)
     minCarbs = minCarbs / 4;
     maxCarbs = maxCarbs / 4;
 
-    let minFat = cal1 * 0.2;
+    let minFat = cal1 * 0.2
     let maxFat = cal1 * 0.3;
     minFat = minFat / 9;
     maxFat = maxFat / 9;
+    
+    let output = " Calories burned per day: " + "\n No exercise: " + cal1 + "\n Light exercise: " + cal2 + "\n Moderate exercise: " + cal3 + "\n Heavy exercise: " + cal4 + "\n Very heavy exercise: " + cal5 + "\n Protein intake should be between " + minProtein + " and " + maxProtein + " grams per day." + "\n Carbohydrate intake should be between " + minCarbs + " and " + maxCarbs + " grams per day." + "\n Fat intake should be between " + minFat + " and " + maxFat + " grams per day.";
+    //display the results on the webpage
+    let result = document.createElement('h2')
+    result.innerHTML = output;
+    document.getElementById("mainCal").appendChild(result);
 
-    console.log(" Calories burned per day: " + "\n No exercise: " + cal1 + "\n Light exercise: " + cal2 + "\n Moderate exercise: " + cal3 + "\n Heavy exercise: " + cal4 + "\n Very heavy exercise: " + cal5);
-    console.log("Protein intake should be between " + minProtein + " and " + maxProtein + " grams per day.");
-    console.log("Carbohydrate intake should be between " + minCarbs + " and " + maxCarbs + " grams per day.");
-    console.log("Fat intake should be between " + minFat + " and " + maxFat + " grams per day.");
 }
 
 let array = []
