@@ -1,3 +1,6 @@
+
+// import { signup } from "./firebase-config";
+
 function getExercise() {
     let muscleElem = document.getElementById('dropdownType');
     let muscle = muscleElem.value;
@@ -255,3 +258,8 @@ function displaySelectedValue(){
         document.getElementById("mainActList").appendChild(head);
     }
 }
+
+
+
+
+
