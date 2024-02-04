@@ -122,7 +122,7 @@ function getDailyNutrients()
     }
     else
     {
-        alert("Invalid")
+        alert("Invalid Sex")
     }
 
     var cal1 = bmr * 1.2;
