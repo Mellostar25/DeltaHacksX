@@ -110,11 +110,15 @@ function getDailyNutrients()
     let bmr = 0
     if (gender == "male")
     {
-        bmr = 66.47 + (30.305* weight) + (5.003 * height) - (6.75 * age);
+        bmr = 66.47 + (6.23865* weight) + (5.003 * height) - (6.75 * age);
+    }
+    else if(gender == "female")
+    {
+        bmr = 655.1 + (4.3389 * weight) + (1.850 * height) - (4.676 * age);
     }
     else
     {
-        bmr = 655.1 + (21.076852 * weight) + (1.850 * height) - (4.676 * age);
+        alert("Invalid")
     }
 
     var cal1 = bmr * 1.2;
