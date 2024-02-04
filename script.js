@@ -106,6 +106,7 @@ function getExercise() {
 function getDailyNutrients()
 {
     //this function uses the user's weight to calculate the amount of nutrients they should consume daily
+    //takes the user's info from the input fields (their id is surrounded by the '' )
     let weight = document.getElementById('calNum').value;
     let height = document.getElementById('heightNum').value;
     let age = document.getElementById('ageNum').value;
@@ -145,9 +146,9 @@ function getDailyNutrients()
     
     let output = " Calories burned per day: " + "\n No exercise: " + cal1 + "\n Light exercise: " + cal2 + "\n Moderate exercise: " + cal3 + "\n Heavy exercise: " + cal4 + "\n Very heavy exercise: " + cal5 + "\n Protein intake should be between " + minProtein + " and " + maxProtein + " grams per day." + "\n Carbohydrate intake should be between " + minCarbs + " and " + maxCarbs + " grams per day." + "\n Fat intake should be between " + minFat + " and " + maxFat + " grams per day.";
     //display the results on the webpage
-    let result = document.createElement('h2')
-    result.innerHTML = output;
-    document.getElementById("mainCal").appendChild(result);
+    let result = document.createElement('h2') //create a new h2 element
+    result.innerHTML = output; //set the innerHTML of the h2 element to the output string
+    document.getElementById("mainCal").appendChild(result); //append the h2 element to the 'mainCal' div
 
 }
 
